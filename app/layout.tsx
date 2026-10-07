@@ -22,10 +22,22 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`dark ${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">
-        <ClerkProvider>
+        <ClerkProvider
+          appearance={{
+            variables: {
+              colorBackground: "#171c19",
+              colorInput: "#222a25",
+              colorInputForeground: "#edf3ee",
+              colorNeutral: "#cbd5ce",
+              colorPrimary: "#78ad8d",
+              colorForeground: "#edf3ee",
+              colorMutedForeground: "#a3b0a7",
+            },
+          }}
+        >
           {children}
         </ClerkProvider>
       </body>
